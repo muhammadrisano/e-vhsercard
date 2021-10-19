@@ -488,10 +488,11 @@
                                                                 <li class="list-group-item">Apa yang harus diLakukan Supaya Kejadian Serupa Tidak Terulang : {{ $row->terulang }}</li>
                                                                 <li class="list-group-item">Bukti Kondisi : 
                                                                     <div class="wrapper-img">
-                                                                        @if ($row->img_hseobs_before)
-                                                                        @endif
+                                                                       
                                                                         <div class="container-img">
-                                                                            <h5>After</h5>
+                                                                             @if ($row->img_hseobs_before)
+                                                                             <h5>After</h5>
+                                                                        @endif
                                                                             <img src="{{ asset('assets/img' . '/' . $row->img_hseobs) }}" alt="">
                                                                         </div>
                                                                         @if ($row->img_hseobs_before)
@@ -1032,9 +1033,21 @@
                                                         <li class="list-group-item">Tindakan Perbaikan yang Dilakukan : {{ $rowst->perbaikan }}</li>
                                                         <li class="list-group-item">Apa yang harus diLakukan Supaya Kejadian Serupa Tidak Terulang : {{ $rowst->terulang }}</li>
                                                         <li class="list-group-item">Bukti Kondisi : 
-                                                            <img src="{{ asset('assets/img' . '/' . $rowst->img_hseobs) }}" style="width: 100%;height: 100%;" alt="">
-                                                            <div style="width: 200px;height: 150px;">
-                                                            </div>
+                                                            <div class="wrapper-img">
+                                                                        <div class="container-img">
+                                                                            @if ($row->img_hseobs_before)
+                                                                            <h5>After</h5>
+                                                                             @endif
+                                                                            <img src="{{ asset('assets/img' . '/' . $row->img_hseobs) }}" alt="">
+                                                                        </div>
+                                                                        @if ($row->img_hseobs_before)
+                                                                        <div class="container-img">
+                                                                            <h5>Before</h5>
+                                                                            <img src="{{ asset('assets/img' . '/' . $row->img_hseobs_before) }}" alt="">
+                                                                        </div>
+                                                                        @endif
+                                                                       
+                                                                    </div>
                                                         </li>
                                                         <li class="list-group-item">Jam Selesai Observasi : {{ $rowst->selesai_kerja }}</li>
                                                        

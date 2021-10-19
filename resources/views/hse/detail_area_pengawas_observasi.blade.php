@@ -230,9 +230,21 @@
                                                 <li class="list-group-item">Tindakan Perbaikan yang Dilakukan : {{ $row->perbaikan }}</li>
                                                 <li class="list-group-item">Apa yang harus diLakukan Supaya Kejadian Serupa Tidak Terulang : {{ $row->terulang }}</li>
                                                 <li class="list-group-item">Bukti Kondisi : 
-                                                    <div style="width: 200px;height: 150px;">
-                                                        <img src="{{ asset('assets/img' . '/' . $row->img_hseobs) }}" style="width: 100%;height: 100%;" alt="">
-                                                    </div>
+                                                   <div class="wrapper-img">
+                                                                        <div class="container-img">
+                                                                            @if ($row->img_hseobs_before)
+                                                                            <h5>After</h5>
+                                                                            @endif
+                                                                            <img src="{{ asset('assets/img' . '/' . $row->img_hseobs) }}" alt="">
+                                                                        </div>
+                                                                        @if ($row->img_hseobs_before)
+                                                                        <div class="container-img">
+                                                                            <h5>Before</h5>
+                                                                            <img src="{{ asset('assets/img' . '/' . $row->img_hseobs_before) }}" alt="">
+                                                                        </div>
+                                                                        @endif
+                                                                       
+                                                                    </div>
                                                 </li>
                                                 <li class="list-group-item">Jam selesai observasi : {{ $row->selesai_kerja }}</li>
                                               <li class="list-group-item">Status :
